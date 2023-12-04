@@ -4,9 +4,13 @@
     <string name="Speed">Speed</string>
     <string name="Travel">Travel</string>
     <string name="Wait">Wait</string>
+
     <string name="Force">Force</string>
+    <string name="mockForce">value</string>
 
     <string name="Run">Run</string>
+
+    <string name="forceField"> </string>
 
     <string name="selectList">Select List</string>
 

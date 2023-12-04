@@ -8,6 +8,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
@@ -15,9 +16,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-
-    String[] users = { "QFLOW-VI-LOT", "QFLOW-VI-LOT1", "QFLOW-VI-LOT2", "QFLOW-VI-LOT3", "QFLOW-VI-LOT4" };
+public class MainActivity extends AppCompatActivity  {
+    //public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    private static final String[] lists = new String[]{ "QFLOW-VI-LOT", "QFLOW-VI-LOT1", "QFLOW-VI-LOT2", "QFLOW-VI-LOT3", "QFLOW-VI-LOT4" };
     private SeekBar sbSpeed, sbTravel, sbWait;
     private EditText etSpeed, etTravel, etWait;
 
@@ -25,13 +26,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        /*
         // Spinner setup
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, users);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(adapter);
         spin.setOnItemSelectedListener(this);
+        */
+
+        AutoCompleteTextView listSelect = findViewById(R.id.listSelect);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lists);
+        listSelect.setAdapter(adapter);
 
         // Initialises SeekBars and EditTexts
         sbSpeed = findViewById(R.id.seekBarSpeed);
@@ -55,12 +61,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View view) {
                 // Code to set ESP32 output pin high/low to send data and start force calculation
-                editText.setText("Text");
+                editText.setText(getString(R.string.mockForce));
             }
         });
 
     }
-
+    /*
     // Spinner selection
     @Override
     public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
@@ -70,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO - Custom Code
     }
-
+    */
     // SeekBarChangeListener
     private void linkSeekBarAndEditText(SeekBar sb, EditText et) {
         sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
