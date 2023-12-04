@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Liqid2.0</string>
+
+    <string name="Speed">Speed</string>
+    <string name="Travel">Travel</string>
+    <string name="Wait">Wait</string>
+    <string name="Force">Force</string>
+
+    <string name="Run">Run</string>
+
+    <string name="selectList">Select List</string>
+
+</resources>
