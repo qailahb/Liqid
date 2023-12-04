@@ -9,17 +9,17 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     String[] users = { "QFLOW-VI-LOT", "QFLOW-VI-LOT1", "QFLOW-VI-LOT2", "QFLOW-VI-LOT3", "QFLOW-VI-LOT4" };
-
-    SeekBar sb;
-    TextView valuetext;
+    private SeekBar sbSpeed, sbTravel, sbWait;
+    private EditText etSpeed, etTravel, etWait;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,50 +33,29 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spin.setAdapter(adapter);
         spin.setOnItemSelectedListener(this);
 
-        // Scrollbar and text input link
-        sb = findViewById(R.id.seekBarSpeed);
-        valuetext = findViewById(R.id.Speed);
+        // Initialises SeekBars and EditTexts
+        sbSpeed = findViewById(R.id.seekBarSpeed);
+        sbTravel = findViewById(R.id.seekBarTravel);
+        sbWait = findViewById(R.id.seekBarWait);
 
-        sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        etSpeed = findViewById(R.id.Speed);
+        etTravel = findViewById(R.id.Travel);
+        etWait = findViewById(R.id.Wait);
+
+        // Initialises button
+        Button button = findViewById(R.id.buttonRun);
+        EditText editText = findViewById(R.id.valueForce);
+
+        // Links SeekBar and EditText pairs
+        linkSeekBarAndEditText(sbSpeed, etSpeed);
+        linkSeekBarAndEditText(sbTravel, etTravel);
+        linkSeekBarAndEditText(sbWait, etWait);
+
+        button.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onProgressChanged(SeekBar sb, int progress, boolean fromUser) {
-                valuetext.setText(String.valueOf(progress));
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar sb) {
-                // Do something when SeekBar tracking starts
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar sb) {
-                // Do something when SeekBar tracking stops
-            }
-        });
-
-        // TextWatcher for EditText
-        valuetext.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Do something before text changes
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Do something when text changes
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                try {
-                    // Parse the text to an integer
-                    int progress = Integer.parseInt(editable.toString());
-
-                    // Set the progress of the SeekBar
-                    sb.setProgress(progress);
-                } catch (NumberFormatException e) {
-                    // Case when input is not an integer - should always be an integer
-                }
+            public void onClick(View view) {
+                // Code to set ESP32 output pin high/low to send data and start force calculation
+                editText.setText("Text");
             }
         });
 
@@ -92,5 +71,49 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // TODO - Custom Code
     }
 
+    // SeekBarChangeListener
+    private void linkSeekBarAndEditText(SeekBar sb, EditText et) {
+        sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                et.setText(String.valueOf(progress));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // Action for when SeekBar tracking starts
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                // Action for when SeekBar tracking stops
+            }
+        });
+
+        // TextWatcher for EditText to update based on scrollbar values
+        et.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int j, int k) {
+                // Do something before text changes
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int j, int k) {
+                // Do something when text changes
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                try {
+                    int progress = Integer.parseInt(editable.toString());
+
+                    // Sets up the progress of the SeekBar
+                    sb.setProgress(progress);
+                } catch (NumberFormatException e) {
+                    // Case for when text can't be converted to an integer
+                }
+            }
+        });
+    }
 
 }

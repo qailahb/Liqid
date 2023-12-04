@@ -105,7 +105,7 @@
             app:layout_constraintVertical_bias="0.4">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/wait"
+                android:id="@+id/Wait"
                 android:layout_width="95dp"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
@@ -192,10 +192,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.609" />
 
     <EditText
         android:id="@+id/valueForce"
@@ -215,17 +215,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
-        android:layout_marginEnd="172dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/Force"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.18"
+        app:layout_constraintHorizontal_bias="0.579"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.422" />
+        app:layout_constraintVertical_bias="0.427" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
