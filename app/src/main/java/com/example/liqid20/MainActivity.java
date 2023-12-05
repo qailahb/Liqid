@@ -35,9 +35,13 @@ public class MainActivity extends AppCompatActivity  {
         spin.setOnItemSelectedListener(this);
         */
 
-        AutoCompleteTextView listSelect = findViewById(R.id.listSelect);
+        AutoCompleteTextView saveSelect = findViewById(R.id.listSaveSelect);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lists);
-        listSelect.setAdapter(adapter);
+        saveSelect.setAdapter(adapter);
+
+        AutoCompleteTextView viewSelect = findViewById(R.id.listViewSelect);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lists);
+        viewSelect.setAdapter(adapter2);
 
         // Initialises SeekBars and EditTexts
         sbSpeed = findViewById(R.id.seekBarSpeed);
@@ -49,7 +53,9 @@ public class MainActivity extends AppCompatActivity  {
         etWait = findViewById(R.id.Wait);
 
         // Initialises button
-        Button button = findViewById(R.id.buttonRun);
+        Button buttonRun = findViewById(R.id.buttonRun);
+       // Button buttonSave = findViewById(R.id.buttonSave);
+
         EditText editText = findViewById(R.id.valueForce);
 
         // Links SeekBar and EditText pairs
@@ -57,13 +63,20 @@ public class MainActivity extends AppCompatActivity  {
         linkSeekBarAndEditText(sbTravel, etTravel);
         linkSeekBarAndEditText(sbWait, etWait);
 
-        button.setOnClickListener(new View.OnClickListener(){
+        buttonRun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Code to set ESP32 output pin high/low to send data and start force calculation
                 editText.setText(getString(R.string.mockForce));
             }
         });
+         /*buttonSave.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                // Code to set ESP32 output pin high/low to send data and start force calculation
+                editText.setText(getString(R.string.mockForce));
+            }
+        }); */
 
     }
     /*

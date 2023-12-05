@@ -20,6 +20,12 @@
         app:srcCompat="@drawable/logo"
         tools:ignore="VisualLintBounds" />
 
+    <!-- Input Parameters -->
+
+    <!-- Output Parameter Force -->
+
+    <!-- Seekbars -->
+
     <Button
         android:id="@+id/buttonRun"
         android:layout_width="113dp"
@@ -30,21 +36,67 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.529" />
+        app:layout_constraintVertical_bias="0.592" />
 
-    <!-- Input Parameters -->
+    <EditText
+        android:id="@+id/valueForce"
+        android:layout_width="121dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="@string/forceField"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:text="@string/forceField"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.591"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/labelForce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/Force"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
+
+    <SeekBar
+        android:id="@+id/seekBarTravel"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="260dp"
+        android:layout_height="48dp"
+        android:max="10"
+        android:progress="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.849"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.274" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="95dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2">
+        app:layout_constraintVertical_bias="0.173">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Speed"
@@ -72,7 +124,7 @@
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3">
+        app:layout_constraintVertical_bias="0.274">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Travel"
@@ -101,7 +153,7 @@
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4">
+        app:layout_constraintVertical_bias="0.373">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Wait"
@@ -121,37 +173,17 @@
             tools:ignore="LabelFor" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Output Parameter Force -->
-
-    <!-- Seekbars -->
-    <SeekBar
-        android:id="@+id/seekBarTravel"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="260dp"
-        android:layout_height="48dp"
-        android:max="10"
-        android:progress="3"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="38dp"
+        android:layout_height="42dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
-
-    <SeekBar
-        android:id="@+id/seekBarWait"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="260dp"
-        android:layout_height="48dp"
-        android:max="10"
-        android:progress="3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
-
+        app:layout_constraintVertical_bias="0.48"
+        app:srcCompat="@android:drawable/ic_menu_upload" />
 
     <SeekBar
         android:id="@+id/seekBarSpeed"
@@ -162,10 +194,56 @@
         android:progress="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintHorizontal_bias="0.849"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.174" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/SaveSelectLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/selectList"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.483">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/listSaveSelect"
+            android:layout_width="314dp"
+            android:layout_height="62dp"
+            android:completionThreshold="1"
+            android:dropDownSelector="@color/black"
+            android:hint="@string/selectList"
+            android:inputType="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.51"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <SeekBar
+        android:id="@+id/seekBarWait"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="260dp"
+        android:layout_height="48dp"
+        android:max="10"
+        android:progress="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.849"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.373" />
+
 
     <!-- Spinner/Label for List Choice -->
     <!--
@@ -181,37 +259,38 @@
         app:layout_constraintVertical_bias="0.781" />
 -->
     <!-- AutoCompleteTextView -->
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/ViewSelectLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/selectList"
+        android:hint="@string/ViewLists"
         android:textColorHint="@color/liqid"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.67">
+        app:layout_constraintVertical_bias="0.74">
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
-            android:id="@+id/listSelect"
-            android:layout_width="400dp"
+            android:id="@+id/listViewSelect"
+            android:layout_width="345dp"
             android:layout_height="62dp"
             android:completionThreshold="1"
             android:dropDownSelector="@color/black"
-            android:hint="@string/selectList"
+            android:hint="@string/ViewLists"
             android:inputType="none"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintHorizontal_bias="0.25"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.67"
+            app:layout_constraintVertical_bias="0.74"
             tools:ignore="SpeakableTextPresentCheck" />
-
     </com.google.android.material.textfield.TextInputLayout>
+
     <!--
     <TextView
         android:id="@+id/listSelect"
@@ -230,71 +309,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.848" />
 -->
-    <EditText
-        android:id="@+id/valueForce"
-        android:layout_width="121dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:hint="@string/forceField"
-        android:inputType="text"
-        android:text="@string/forceField"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.941"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.531"
-        tools:ignore="SpeakableTextPresentCheck" />
 
-    <TextView
-        android:id="@+id/labelForce"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/Force"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.579"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.427" />
-
-    <Button
-        android:id="@+id/buttonSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:="@drawable/button_border"
-        android:backgroundTint="@color/white"
-        android:text="@string/Save"
-        android:textColor="@color/liqid"
-        android:textColorHighlight="@color/liqid"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.325"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.758" />
-
-    <Button
-        android:id="@+id/buttonViewLists"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:text="@string/ViewLists"
-        android:textColor="@color/liqid"
-        android:textColorHighlight="@color/liqid"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.701"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.758" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
