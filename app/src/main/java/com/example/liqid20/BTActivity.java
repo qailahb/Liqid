@@ -2,7 +2,6 @@ package com.example.liqid20;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,13 +9,12 @@ import android.widget.Button;
 
 public class BTActivity extends AppCompatActivity {
 
-    private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bt_connection);
+        setContentView(R.layout.activity_bt);
 
-        button = (Button) findViewById(R.id.button);
+        Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,4 +27,6 @@ public class BTActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
+    // still need BT discover, pair and message to confirm connection
 }
