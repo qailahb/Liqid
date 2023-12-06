@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 public class DataBaseHelper extends SQLiteOpenHelper {
 
+    private Context context;
     public static final String DATABASE_NAME = "Liqid2.0";
     public static final String TABLE_NAME = "project";
     public static final String COL_1 = "SET";
@@ -21,11 +22,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     public DataBaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
+        this.context = context;
     }
 
     @Override
     public void onCreate(SQLiteDatabase dB) {
-        dB.execSQL("create table " + TABLE_NAME + "(COL_1 integer primary key autoincrement, SPEED text, TRAVEL text, WAIT text, FORCE text)");
+        dB.execSQL("CREATE TABLE " + TABLE_NAME + "(COL_1 INTEGER PRIMARY KEY AUTOINCREMENT, SPEED TEXT, TRAVEL TEXT, WAIT TEXT, FORCE INTEGER)");
     }
 
     @Override
