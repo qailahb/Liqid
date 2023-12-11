@@ -28,23 +28,22 @@
 
     <Button
         android:id="@+id/buttonRun"
-        android:layout_width="113dp"
-        android:layout_height="63dp"
+        android:layout_width="120dp"
+        android:layout_height="71dp"
         android:backgroundTint="@color/liqid"
-        android:onClick="disable"
         android:text="@string/Run"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.592" />
+        app:layout_constraintVertical_bias="0.612" />
 
     <EditText
         android:id="@+id/valueForce"
-        android:layout_width="121dp"
-        android:layout_height="48dp"
+        android:layout_width="225dp"
+        android:layout_height="55dp"
         android:ems="10"
         android:hint="@string/forceField"
         android:importantForAutofill="no"
@@ -52,10 +51,28 @@
         android:text="@string/forceField"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.591"
+        app:layout_constraintVertical_bias="0.718"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#0B0A0A"
+        android:clickable="true"
+        android:contentDescription="@string/forceField"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.719"
+        app:srcCompat="@android:drawable/ic_menu_upload"
+        app:tint="#FEFAFD"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
@@ -69,10 +86,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.648" />
 
     <SeekBar
         android:id="@+id/seekBarTravel"
@@ -106,6 +123,7 @@
             android:ems="10"
             android:hint="@string/Speed"
             android:inputType="text"
+            android:textColor="#2D2F31"
             android:textColorHint="#546E7A"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +131,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.2"
-            tools:ignore="LabelFor" />
+            tools:ignore="LabelFor,TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -142,7 +160,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.3"
-            tools:ignore="LabelFor" />
+            tools:ignore="LabelFor,TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -163,14 +181,14 @@
             android:ems="10"
             android:hint="@string/Wait"
             android:inputType="text"
-            android:textColorHint="@color/liqid"
+            android:textColorHint="#546E7A"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.05"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.4"
-            tools:ignore="LabelFor" />
+            tools:ignore="LabelFor,TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <SeekBar
@@ -196,22 +214,22 @@
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.483">
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:id="@+id/listSaveSelect"
-            android:layout_width="314dp"
-            android:layout_height="62dp"
+            android:layout_width="357dp"
+            android:layout_height="68dp"
             android:completionThreshold="1"
             android:dropDownSelector="@color/black"
             android:hint="@string/selectList"
             android:inputType="none"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.51"
@@ -247,51 +265,6 @@
         app:layout_constraintVertical_bias="0.781" />
 -->
     <!-- AutoCompleteTextView -->
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ViewSelectLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/ViewLists"
-        android:textColorHint="@color/liqid"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.74">
-
-        <com.google.android.material.textfield.MaterialAutoCompleteTextView
-            android:id="@+id/listViewSelect"
-            android:layout_width="345dp"
-            android:layout_height="62dp"
-            android:completionThreshold="1"
-            android:dropDownSelector="@color/black"
-            android:hint="@string/ViewLists"
-            android:inputType="none"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.74"
-            tools:ignore="SpeakableTextPresentCheck" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <ImageButton
-        android:id="@+id/buttonSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/forceField"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.979"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.482"
-        app:srcCompat="@android:drawable/ic_menu_upload"
-        tools:ignore="SpeakableTextPresentCheck" />
 
     <!--
     <TextView
