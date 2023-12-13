@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity  {
 
         EditText etForce = findViewById(R.id.valueForce);
 
+        EditText etSpeed = findViewById(R.id.Speed);
+        EditText etTravel = findViewById(R.id.Travel);
+        EditText etWait = findViewById(R.id.Wait);
+
         // Initialises button
         Button buttonRun = findViewById(R.id.buttonRun);
 
